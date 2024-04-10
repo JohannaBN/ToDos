@@ -1,7 +1,7 @@
 import { useToDoContext } from "../contexts/ToDoContext";
 
 export const ToDoCard = ({ toDo, toggleComplete }) => {
-  const { removeToDo, clearToDos } = useToDoContext();
+  const { removeToDo } = useToDoContext();
 
   const handleRemove = () => {
     removeToDo(toDo.id);

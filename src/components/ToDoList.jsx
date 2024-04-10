@@ -2,7 +2,11 @@ import { ToDoCard } from "./ToDoCard";
 import { useToDoContext } from "../contexts/ToDoContext";
 
 export const ToDoList = () => {
-  const { toDos, toggleComplete } = useToDoContext();
+  const { toDos, toggleComplete, clearToDos } = useToDoContext();
+
+  const handleClearAll = () => {
+    clearToDos();
+  };
 
   return (
     <div>
@@ -16,6 +20,7 @@ export const ToDoList = () => {
           />
         ))}
       </ul>
+      <button onClick={handleClearAll}>Clear ToDo-list</button>
     </div>
   );
 };

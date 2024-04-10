@@ -3,9 +3,6 @@ import { createContext, useState, useContext } from "react";
 // Create a Context
 const ToDoContext = createContext();
 
-// Custom hook
-export const useToDoContext = () => useContext(ToDoContext);
-
 export const ToDoProvider = ({ children }) => {
   const [toDos, setToDos] = useState([
     {
@@ -69,3 +66,6 @@ export const ToDoProvider = ({ children }) => {
     </ToDoContext.Provider>
   );
 };
+
+// Custom hook
+export const useToDoContext = () => useContext(ToDoContext);
